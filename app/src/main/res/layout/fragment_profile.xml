@@ -1,14 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".fragments.ProfileFragment">
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_profile"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            android:layout_height="50dp"
+            android:background="@color/colorWhite">
 
-</FrameLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/user_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rajneesh Shukla"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerHorizontal="true"/>
+
+            <ImageView
+                    android:id="@+id/hamburger_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:src="@drawable/options"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="20dp"/>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+            android:id="@+id/box_1"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@id/toolbar_profile">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/profile"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_alignParentStart="true"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/profile_image"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+        >
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:orientation="horizontal">
+                <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                    <TextView
+                            android:id="@+id/post_count_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="10"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+                    <TextView
+                            android:id="@+id/post_tv"
+                            android:text="@string/str_post"
+                            android:layout_below="@id/post_count_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:gravity="center"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                    <TextView
+                            android:id="@+id/followers_count_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="10"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+                    <TextView
+                            android:id="@+id/followers_tv"
+                            android:text="@string/str_followers"
+                            android:layout_below="@id/followers_count_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center">
+                    <TextView
+                            android:id="@+id/following_count_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="10"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+                    <TextView
+                            android:id="@+id/following_tv"
+                            android:text="@string/str_following"
+                            android:layout_below="@id/following_count_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                    android:text="Edit Profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:background="@drawable/button_black_background"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+            android:id="@+id/user_name"
+            android:layout_marginStart="16dp"
+            android:text="User Name"
+            android:layout_below="@id/box_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/user_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_name"
+            android:layout_marginStart="16dp"
+            android:text="Bio - This is Rajneesh Shukla"/>
+
+    <LinearLayout
+            android:layout_below="@id/user_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:background="@drawable/button_black_background">
+
+            <ImageView
+                    android:id="@+id/images_grid_view_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/grid"
+                    android:layout_weight="1"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+            <ImageView
+                android:id="@+id/images_save_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/grid"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"/>
+    </LinearLayout>
+</RelativeLayout>
