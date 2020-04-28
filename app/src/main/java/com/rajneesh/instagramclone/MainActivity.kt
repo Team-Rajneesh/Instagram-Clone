@@ -20,23 +20,26 @@ class MainActivity : AppCompatActivity() {
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-               mSelectedFragment = HomeFragment()
+               replaceFragmentInContainer(HomeFragment())
+               return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_search -> {
-                mSelectedFragment = SearchFragment()
+                replaceFragmentInContainer(SearchFragment())
+                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_add -> {
-                mSelectedFragment = AddFragment()
+                replaceFragmentInContainer(AddFragment())
+                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_heart -> {
-                mSelectedFragment = NotificationsFragment()
+                replaceFragmentInContainer(NotificationsFragment())
+                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_profile -> {
-                mSelectedFragment = ProfileFragment()
+                replaceFragmentInContainer(ProfileFragment())
+                return@OnNavigationItemSelectedListener true
             }
         }
-
-        mSelectedFragment?.let { replaceFragmentInContainer(it) }
 
         false
     }

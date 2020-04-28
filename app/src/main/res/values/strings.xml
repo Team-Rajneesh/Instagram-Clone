@@ -13,4 +13,7 @@
     <string name="str_followers">Followers</string>
     <string name="str_following">Following</string>
     <string name="str_edit_profile">Edit Profile</string>
+
+    <!--Notification Screen strings-->
+    <string name="str_notifications">Notifications</string>
 </resources>
