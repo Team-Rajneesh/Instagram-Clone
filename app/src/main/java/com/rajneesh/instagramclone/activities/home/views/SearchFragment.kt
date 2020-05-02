@@ -1,4 +1,4 @@
-package com.rajneesh.instagramclone.fragments
+package com.rajneesh.instagramclone.activities.home.views
 
 
 import android.os.Bundle

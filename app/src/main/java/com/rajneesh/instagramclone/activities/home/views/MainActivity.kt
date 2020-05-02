@@ -1,11 +1,10 @@
-package com.rajneesh.instagramclone
+package com.rajneesh.instagramclone.activities.home.views
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.rajneesh.instagramclone.fragments.*
+import com.rajneesh.instagramclone.R
 
 /**
  * Created by - Rajneesh Shukla
