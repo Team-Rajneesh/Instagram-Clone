@@ -16,4 +16,6 @@
 
     <!--Notification Screen strings-->
     <string name="str_notifications">Notifications</string>
+
+    <!-- Edit profile screen string-->
 </resources>
